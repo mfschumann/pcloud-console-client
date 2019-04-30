@@ -97,10 +97,12 @@ To create a debian package form the source use:
 > debuild -i -us -uc -b  
 
 ## Red Hat & family
-To create RPM from source:
+To create RPM from source:  
+```
 $ rpmdev-setuptree
-$ rpmbuild -ba pCloudCC.spec
-All documentation [here](https://rpm-packaging-guide.github.io).
+$ rpmbuild -ba pCloudCC.spec   
+```
+All documentation [here](https://rpm-packaging-guide.github.io).   
  
 ## Other distributions
 - Binary packages 64 bit
@@ -109,7 +111,7 @@ All documentation [here](https://rpm-packaging-guide.github.io).
   [pcloudcc_2.0.1-1_amd64_ubuntu.17.10.deb](https://my.pcloud.com/publink/show?code=XZFeaQ7ZH1nHUfK4MLzGdeCvmmJywBUFANyy)
 - Ubunutu 14.04 64 bit
   [pcloudcc_2.0.1-1_amd64_ubuntu.14.04.deb](https://my.pcloud.com/publink/show?code=XZSeaQ7ZFPq1g8oowJXyXap7KKzTtSKoACHy)
-- CentOS/RHEL 7 64 bit
+- CentOS/RHEL 7 64 bit   
   [pCloudCC-2.0.1.1-beta4.el7.jfoto.x86_64.rpm]()
 
 
