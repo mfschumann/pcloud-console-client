@@ -56,14 +56,14 @@ cp pcloudcc $RPM_BUILD_ROOT/usr/bin/
 
 
 %changelog
-* Tue Apr 30 2019 Jean-François Tronche <rpm@jfoto.fr> 2.0.1.beta4
+* Tue Apr 30 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta4
 - Patch pfs.c for fuse *allow_others* option 
 
-* Mon Apr 29 2019 Jean-François Tronche <rpm@jfoto.fr> 2.0.1.beta3
+* Mon Apr 29 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta3
 - Change name
 
-* Wed Jan 09 2019 Jean-François Tronche <rpm@jfoto.fr> 2.0.1.beta2
+* Wed Jan 09 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta2
 - Use of git repo on Github
 
-* Tue Jan 08 2019 Jean-François Tronche <rpm@jfoto.fr> 2.0.1.beta1
+* Tue Jan 08 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta1
 - First build
