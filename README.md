@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # pCloud Console Client
 
 This is a simple linux console client for pCloud cloud storage. 
