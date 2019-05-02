@@ -9,7 +9,7 @@ while choix == 'o':
     else:
         note = input('Entrez sa note : ')
         liste_films.append((titre,note))
-        liste_films.sort()
+        liste_films.sort(key=itemgetter(0))  # tri sur le premier élément du tuple donc par nom de film
     choix = input('Voulez-vous continuer (o/n) ?')
-    print('')
+    print()  # Pas besoin de paramètre pour afficher une ligne vide
 print(liste_films)
