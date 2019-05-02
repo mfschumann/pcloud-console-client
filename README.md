@@ -100,7 +100,7 @@ To create a debian package form the source use:
 To create RPM from source:  
 ```
 $ rpmdev-setuptree
-$ rpmbuild -ba pCloudCC.spec   
+$ rpmbuild -ba --sign pCloudCC.spec   
 ```
 All documentation [here](https://rpm-packaging-guide.github.io).   
  
