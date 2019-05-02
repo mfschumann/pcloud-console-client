@@ -112,6 +112,6 @@ All documentation [here](https://rpm-packaging-guide.github.io).
 - Ubunutu 14.04 64 bit
   [pcloudcc_2.0.1-1_amd64_ubuntu.14.04.deb](https://my.pcloud.com/publink/show?code=XZSeaQ7ZFPq1g8oowJXyXap7KKzTtSKoACHy)
 - CentOS/RHEL 7 64 bit 
-  [pCloudCC-2.0.1.1-beta4.el7.jfoto.x86_64.rpm](https://my.pcloud.com/publink/show?code=XZu9iO7Z8H82GnDelCm657ixtfW0UBAw04Mk)
+  [pCloudCC-2.0.1.1-RC2.el7.jfoto.x86_64.rpm](https://my.pcloud.com/publink/show?code=XZhG0U7ZfXLLMQChvibcTMwxxtQjnJ3IvimV)
 
 
