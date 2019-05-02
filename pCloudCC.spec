@@ -1,6 +1,6 @@
 Name:           pCloudCC
 Version:        2.0.1.1
-Release:        beta4%{?dist}
+Release:        RC2%{?dist}
 Summary:        This is a simple linux console client for pCloud cloud storage.
 
 License:        Copyright (c) 2013-2016 pCloud Ltd
@@ -35,6 +35,10 @@ cmake .
 make
 
 
+%pre
+sed 's/^# user/user/' /etc/fuse.conf > /tmp/fuse.conf
+mv -f /tmp/fuse.conf  /etc/
+
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/lib64 && mkdir -p $RPM_BUILD_ROOT/usr/bin
@@ -43,6 +47,10 @@ cp libpcloudcc_lib.so $RPM_BUILD_ROOT/usr/lib64/
 cp pcloudcc $RPM_BUILD_ROOT/usr/bin/
 
 %post -p /sbin/ldconfig
+
+%preun
+sed 's/^user/# user/'  /etc/fuse.conf > /tmp/fuse.conf
+mv -f /tmp/fuse.conf  /etc/
 
 %postun -p /sbin/ldconfig
 
@@ -56,14 +64,23 @@ cp pcloudcc $RPM_BUILD_ROOT/usr/bin/
 
 
 %changelog
-* Tue Apr 30 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta4
+* Thu May 02 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.rc2
+- Fix fuse.conf option
+
+* Thu May 02 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.rc1
+- RPM signed
+
+* Thu May 02 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.beta5
+- Fix patch pfs.c for fuse *allow_other* option 
+
+* Tue Apr 30 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.beta4
 - Patch pfs.c for fuse *allow_others* option 
 
-* Mon Apr 29 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta3
+* Mon Apr 29 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.beta3
 - Change name
 
-* Wed Jan 09 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta2
+* Wed Jan 09 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.beta2
 - Use of git repo on Github
 
-* Tue Jan 08 2019 bigornoo <rpm@jfoto.fr> 2.0.1.beta1
+* Tue Jan 08 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.beta1
 - First build
