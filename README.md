@@ -14,6 +14,5 @@ $ rpmbuild -ba --sign pCloudCC.spec
 Details [here](https://rpm-packaging-guide.github.io).   
  
 ## Other distributions  
-- CentOS/RHEL 7 64 bit  
-  [pCloudCC-2.0.1.1-1.1.el7.jfoto.x86_64.rpm](https://my.pcloud.com/publink/show?code=XZWsHU7ZTBoO61NJKbJloOUcJ0m6bHcg9zdy)  
+- CentOS/RHEL 7 64 bit [pCloudCC-2.0.1.1-1.1.el7.jfoto.x86_64.rpm](https://my.pcloud.com/publink/show?code=XZWsHU7ZTBoO61NJKbJloOUcJ0m6bHcg9zdy)  
 
