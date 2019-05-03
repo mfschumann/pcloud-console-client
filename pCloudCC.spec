@@ -1,6 +1,6 @@
 Name:           pCloudCC
 Version:        2.0.1.1
-Release:        RC2%{?dist}
+Release:        1.1%{?dist}
 Summary:        This is a simple linux console client for pCloud cloud storage.
 
 License:        Copyright (c) 2013-2016 pCloud Ltd
@@ -8,6 +8,7 @@ URL:            https://github.com/pcloudcom/console-client
 Source0:        https://github.com/pcloudcom/console-client/archive/master.zip
 
 Patch0: 	fuseallaccess.patch
+Patch1: 	cachesize.patch
 
 BuildRequires:  git zlib-devel boost-devel boost-static fuse-devel glibc-devel cmake gcc systemd-devel boost-system boost-program-options gcc-c++
 Requires:       fuse redhat-lsb-core
@@ -21,6 +22,7 @@ pCloud Drive console-client is a console client application that creates a secur
 %setup -n console-client-master
 
 %patch0
+%patch1
 
 %build
 cd $RPM_BUILD_DIR/console-client-master/pCloudCC/lib/pclsync/
@@ -38,6 +40,11 @@ make
 %pre
 sed 's/^# user/user/' /etc/fuse.conf > /tmp/fuse.conf
 mv -f /tmp/fuse.conf  /etc/
+while [ ! -z $(pgrep -f pCloudDr) ]
+do
+        pkill -15 -f pCloudDr
+        sleep 2
+done
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -64,6 +71,12 @@ mv -f /tmp/fuse.conf  /etc/
 
 
 %changelog
+* Fri May 03 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1-1.1
+- 1.1 version. Stop pcloud before update.
+
+* Thu May 02 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1-1.0
+- 1.0 version. Increase cache size to 15 (default 5) GB.
+
 * Thu May 02 2019 bigornoo <rpm@jfoto.fr> 2.0.1.1.rc2
 - Fix fuse.conf option
 
