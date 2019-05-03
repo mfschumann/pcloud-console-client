@@ -11,7 +11,7 @@ To create RPM from source:
 $ rpmdev-setuptree
 $ rpmbuild -ba --sign pCloudCC.spec   
 ```
-All documentation [here](https://rpm-packaging-guide.github.io).   
+Details [here](https://rpm-packaging-guide.github.io).   
  
 ## Other distributions  
 - CentOS/RHEL 7 64 bit  
