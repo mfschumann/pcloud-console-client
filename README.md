@@ -1,15 +1,9 @@
 # pCloud Console Client
 
-This is a simple linux console client for pCloud cloud storage. 
+This is a simple linux console client for pCloud cloud storage.   
 
-## Required libraries 
-[Zlib](http://zlib.net/)  A Massively Spiffy Yet Delicately Unobtrusive Compression Library.  
-[Boost](http://www.boost.org/) Boost system and boost program options libraries used.  
-[Pthread](http://www.gnu.org/)   
-[Fuse](https://github.com/libfuse/libfuse) Filesystem in Userspace.  
-  
-Also requires   
-[CMake](https://cmake.org/) build system.  
+This a fork from the official CLI console client. All documentation [here](https://github.com/pcloudcom/console-client).  
+I have build a signed RPM from sources.   
 
 On Ubuntu you can run the following command:  
 > sudo apt-get install cmake zlib1g-dev libboost-system-dev libboost-program-options-dev libpthread-stubs0-dev libfuse-dev libudev-dev
@@ -99,6 +93,17 @@ Locally cached files are located under `~/.pcloud/Cache` dir. When there is only
 ## Debian
 To create a debian package form the source use:  
 > debuild -i -us -uc -b  
+
+## Red Hat & family
+To create RPM from source:  
+```
+$ rpmdev-setuptree
+$ rpmbuild -ba --sign pCloudCC.spec   
+```
+Details [here](https://rpm-packaging-guide.github.io).   
+ 
+## RPM  
+- CentOS/RHEL 7 64 bit [pCloudCC-2.0.1.1-1.1.el7.jfoto.x86_64.rpm](https://my.pcloud.com/publink/show?code=XZWsHU7ZTBoO61NJKbJloOUcJ0m6bHcg9zdy)  
 
 ## Older pre-built packages (no EU server supprt)
 - Ubuntu 18.04 64 bit

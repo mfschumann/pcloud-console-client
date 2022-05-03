@@ -1,0 +1,10 @@
+--- pCloudCC/lib/pclsync/pfs.c	2018-04-16 18:11:41.000000000 +0200
++++ pCloudCC/lib/pclsync/pfs_patch.c	2019-04-30 17:46:43.681956866 +0200
+@@ -3315,6 +3315,7 @@
+ 
+ #if defined(P_OS_LINUX)
+   fuse_opt_add_arg(&args, "argv");
++  fuse_opt_add_arg(&args, "-oallow_other");
+   fuse_opt_add_arg(&args, "-oauto_unmount");
+ //  fuse_opt_add_arg(&args, "-ouse_ino");
+   fuse_opt_add_arg(&args, "-ofsname="DEFAULT_FUSE_MOUNT_POINT".fs");
